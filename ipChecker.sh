@@ -15,7 +15,7 @@ echo "${lastKnownIP}"
 NOW=$(date +"%d-%m-%YT%T")
 echo "${NOW}"
 
-actualIP=$(dig +short myip.opendns.com @resolver1.opendns.com)
+actualIP=$(curl https://ipinfo.io/ip)
 echo "${actualIP}"
 
 if [ "${lastKnownIP}" = "${actualIP}" ]; then
