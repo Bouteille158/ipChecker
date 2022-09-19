@@ -20,6 +20,8 @@ echo "${actualIP}"
 
 if [ "${lastKnownIP}" = "${actualIP}" ]; then
   echo "Same IP"
+elif [ "${actualIP}" = "" ]; then
+  echo "No IP"
 else
   echo "Different IP"
   printf "Subject: Device IP changed\n
