@@ -24,12 +24,12 @@ elif [ "${actualIP}" = "" ]; then
   echo "No IP"
 else
   echo "Different IP"
-  printf "Subject: Device IP changed\n
-New IP : %s
-Change it at https://domains.google.com/
+  printf "New IP : %s
+Change it at domains.google.com
 
 This is an automated message, please don't reply.
-  " "${actualIP}" | ssmtp "${mailToSend}"
+
+  " "${actualIP}" | mail --subject="Device IP changed" "${mailToSend}"
   echo "${NOW}" >> "${ipFile}"
   echo "${actualIP}" >> "${ipFile}"
 fi
