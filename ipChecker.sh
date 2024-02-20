@@ -15,7 +15,7 @@ echo "${lastKnownIP}"
 NOW=$(date +"%d-%m-%YT%T")
 echo "${NOW}"
 
-actualIP=$(curl https://ipinfo.io/ip)
+actualIP=$(curl -s https://ipinfo.io/ip)
 echo "${actualIP}"
 
 if [ "${lastKnownIP}" = "${actualIP}" ]; then
